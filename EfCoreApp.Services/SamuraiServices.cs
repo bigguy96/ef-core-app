@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Text.Json;
+using System.Text;
 
 namespace EfCoreApp.Services
 {
@@ -19,9 +20,14 @@ namespace EfCoreApp.Services
             _client = _httpClientFactory.CreateClient("myclient");
         }
 
-        public Task Add(Samurai samurai)
+        public async Task Add(Samurai samurai)
         {
-            throw new NotImplementedException();
+            const string uri = "Samurais";
+            var options = new JsonSerializerOptions { WriteIndented = true, IgnoreNullValues = true };
+            var jsonString = JsonSerializer.Serialize(samurai, options);
+            var data = new StringContent(jsonString, Encoding.UTF8, "application/json");
+
+            await _client.PostAsync(uri, data);            
         }
 
         public async Task<IEnumerable<Samurai>> GetAll()
@@ -35,8 +41,8 @@ namespace EfCoreApp.Services
             return JsonSerializer.Deserialize<IEnumerable<Samurai>>(samurai, new JsonSerializerOptions
             {
                 IgnoreNullValues = true,
-                PropertyNameCaseInsensitive =true
-            });            
+                PropertyNameCaseInsensitive = true
+            });
         }
 
         public async Task<Samurai> GetOne(int id)

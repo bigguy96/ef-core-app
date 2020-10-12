@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 using System.Threading.Tasks;
+using EfCoreApp.Domain;
 using EfCoreApp.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using SamuraiWebApplication.Models;
 
 namespace SamuraiWebApplication.Controllers
 {
@@ -23,19 +20,17 @@ namespace SamuraiWebApplication.Controllers
 
         public async Task<IActionResult> IndexAsync()
         {
-            var s = await _samuraiServices.GetAll();
-            return View();
-        }
+            var guid = Guid.NewGuid().ToString().Substring(0, 6);
+            var samurai = new Samurai
+            {
+                Name = guid,
+                Clan = new Clan { ClanName = guid },
+                Horse = new Horse { Name = guid }
+            };
+            await _samuraiServices.Add(samurai);
+            var samurais = await _samuraiServices.GetAll();
 
-        public IActionResult Privacy()
-        {
             return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
