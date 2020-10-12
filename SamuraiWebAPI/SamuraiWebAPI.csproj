@@ -1,22 +1,25 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+	</PropertyGroup>
 
-  <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-  </PropertyGroup>
+	<PropertyGroup>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<NoWarn>$(NoWarn);1591</NoWarn>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.8" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.8">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.8" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.8">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\EfCoreApp.Data\EfCoreApp.Data.csproj" />
-    <ProjectReference Include="..\EfCoreApp.Domain\EfCoreApp.Domain.csproj" />
-  </ItemGroup>
-
-
+	<ItemGroup>
+		<ProjectReference Include="..\EfCoreApp.Data\EfCoreApp.Data.csproj" />
+		<ProjectReference Include="..\EfCoreApp.Domain\EfCoreApp.Domain.csproj" />
+	</ItemGroup>
 </Project>

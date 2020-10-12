@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -21,15 +20,28 @@ namespace SampleWebAPI.Controllers
             _context = context;
         }
 
-        // GET: api/Samurais
+        /// <summary>
+        /// Gets a list of samurais.
+        /// </summary>
+        /// <returns>List os samurais</returns>
+        /// <response code="200">Returns a list of samurais</response>        
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<Samurai>))]
         public async Task<ActionResult<IEnumerable<Samurai>>> GetSamurais()
         {
             return await _context.Samurais.ToListAsync();
         }
 
-        // GET: api/Samurais/5
+        /// <summary>
+        /// Gets a samurai.
+        /// </summary>
+        /// <param name="id">Samurai's id</param>
+        /// <returns>A samurai, otherwise not found.</returns>
+        /// <response code="200">Returns a samurai</response>
+        /// <response code="204">Samurai is null</response> 
         [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Samurai))]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<ActionResult<Samurai>> GetSamurai(int id)
         {
             var samurai = await _context.Samurais.FindAsync(id);
@@ -42,10 +54,19 @@ namespace SampleWebAPI.Controllers
             return samurai;
         }
 
-        // PUT: api/Samurais/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        /// <summary>
+        /// Updates a samurai.
+        /// </summary>
+        /// <param name="id">Samurai's id</param>
+        /// <param name="samurai">Samurai details</param>
+        /// <returns>No content if successful, otherwise 400.</returns>
+        /// <response code="204">Saumrai updated successfully</response>
+        /// <response code="400">Samurai doesn't exist</response> 
+        /// <response code="404">Samurai not found</response>
         [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> PutSamurai(int id, Samurai samurai)
         {
             if (id != samurai.Id)
@@ -74,9 +95,13 @@ namespace SampleWebAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Samurais
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        /// <summary>
+        /// Adds a new samurai.
+        /// </summary>
+        /// <param name="samurai">Samurai details</param>
+        /// <returns>Returns 201 with link to new samurai.</returns>
+        /// <response code="201">Newly created samurai</response>
+        [ProducesResponseType(StatusCodes.Status201Created)]
         [HttpPost]
         public async Task<ActionResult<Samurai>> PostSamurai(Samurai samurai)
         {
@@ -86,7 +111,15 @@ namespace SampleWebAPI.Controllers
             return CreatedAtAction("GetSamurai", new { id = samurai.Id }, samurai);
         }
 
-        // DELETE: api/Samurais/5
+        /// <summary>
+        /// Deletes a samurai.
+        /// </summary>
+        /// <param name="id">Samurai's id</param>
+        /// <returns>Samurai details, otherwise not found.</returns>
+        /// <response code="200">Deleted samurai</response>
+        /// <response code="404">Samurai not found</response>
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Samurai))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpDelete("{id}")]
         public async Task<ActionResult<Samurai>> DeleteSamurai(int id)
         {
