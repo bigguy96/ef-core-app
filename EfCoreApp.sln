@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EfCoreApp.Domain", "EfCoreA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EfCoreApp.Data", "EfCoreApp.Data\EfCoreApp.Data.csproj", "{2F3AFD6D-4C62-4604-AFB8-72FA281117D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleWebAPI", "SampleWebAPI\SampleWebAPI.csproj", "{FC2AE3BF-D95B-48B6-97D8-657AEFFDA273}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2F3AFD6D-4C62-4604-AFB8-72FA281117D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F3AFD6D-4C62-4604-AFB8-72FA281117D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F3AFD6D-4C62-4604-AFB8-72FA281117D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC2AE3BF-D95B-48B6-97D8-657AEFFDA273}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC2AE3BF-D95B-48B6-97D8-657AEFFDA273}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC2AE3BF-D95B-48B6-97D8-657AEFFDA273}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC2AE3BF-D95B-48B6-97D8-657AEFFDA273}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
