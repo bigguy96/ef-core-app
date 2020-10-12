@@ -38,18 +38,15 @@ namespace SampleWebAPI.Controllers
         /// <param name="id">Samurai's id</param>
         /// <returns>A samurai, otherwise not found.</returns>
         /// <response code="200">Returns a samurai</response>
-        /// <response code="204">Samurai is null</response> 
+        /// <response code="404">Samurai doesn't exist</response> 
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Samurai))]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<Samurai>> GetSamurai(int id)
         {
             var samurai = await _context.Samurais.FindAsync(id);
 
-            if (samurai == null)
-            {
-                return NotFound();
-            }
+            if (samurai == null)  return NotFound();
 
             return samurai;
         }
