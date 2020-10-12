@@ -9,6 +9,7 @@ using EfCoreApp.Domain;
 
 namespace SampleWebAPI.Controllers
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
     public class SamuraisController : ControllerBase
