@@ -1,5 +1,6 @@
 ﻿using EfCoreApp.Domain;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace EfCoreApp.Data
 {
@@ -10,10 +11,16 @@ namespace EfCoreApp.Data
         public DbSet<Quote> Quotes { get; set; }
         public DbSet<Battle> Battles { get; set; }
 
+        public static readonly ILoggerFactory LoggerFactory = Microsoft.Extensions.Logging.LoggerFactory.Create(builder =>
+        {
+            builder.AddFilter((string category, LogLevel level) =>
+            category == DbLoggerCategory.Database.Name && level == LogLevel.Information).AddConsole();
+        });
+
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
         {
             const string connectionString = "Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = SamuraiAppData";
-            dbContextOptionsBuilder.UseSqlServer(connectionString);            
+            dbContextOptionsBuilder.UseSqlServer(connectionString).UseLoggerFactory(LoggerFactory).EnableSensitiveDataLogging();            
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
