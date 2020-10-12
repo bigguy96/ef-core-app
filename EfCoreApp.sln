@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EfCoreApp.Data", "EfCoreApp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SamuraiWebAPI", "SamuraiWebAPI\SamuraiWebAPI.csproj", "{522BFF06-EE92-4685-A941-277139DDC3F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfCoreApp.Services", "EfCoreApp.Services\EfCoreApp.Services.csproj", "{769F92D5-043F-406B-B74E-B128FF6F897A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SamuraiWebApplication", "SamuraiWebApplication\SamuraiWebApplication.csproj", "{D39F9409-9725-4B59-998B-3277B9F0F14B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{522BFF06-EE92-4685-A941-277139DDC3F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{522BFF06-EE92-4685-A941-277139DDC3F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{522BFF06-EE92-4685-A941-277139DDC3F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{769F92D5-043F-406B-B74E-B128FF6F897A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{769F92D5-043F-406B-B74E-B128FF6F897A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{769F92D5-043F-406B-B74E-B128FF6F897A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{769F92D5-043F-406B-B74E-B128FF6F897A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D39F9409-9725-4B59-998B-3277B9F0F14B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D39F9409-9725-4B59-998B-3277B9F0F14B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D39F9409-9725-4B59-998B-3277B9F0F14B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D39F9409-9725-4B59-998B-3277B9F0F14B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
