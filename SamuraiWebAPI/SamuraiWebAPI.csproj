@@ -18,8 +18,8 @@
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\EfCoreApp.Data\Samurai.Data.csproj" />
-		<ProjectReference Include="..\EfCoreApp.Domain\Samurai.Domain.csproj" />
+	<ItemGroup>		
+		<ProjectReference Include="..\Samurai.Data\Samurai.Data.csproj" />
+		<ProjectReference Include="..\Samurai.Domain\Samurai.Domain.csproj" />
 	</ItemGroup>
 </Project>

@@ -4,8 +4,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using EfCoreApp.Data;
 using EfCoreApp.Domain;
+using EfCoreApp.Data;
 
 namespace SampleWebAPI.Controllers
 {

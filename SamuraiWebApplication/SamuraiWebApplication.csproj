@@ -4,8 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\EfCoreApp.Services\Samurai.Services.csproj" />
+  <ItemGroup>    
     <ProjectReference Include="..\Samurai.Domain\Samurai.Domain.csproj" />
     <ProjectReference Include="..\Samurai.Services\Samurai.Services.csproj" />
   </ItemGroup>
