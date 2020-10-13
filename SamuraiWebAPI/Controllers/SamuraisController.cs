@@ -30,7 +30,15 @@ namespace SampleWebAPI.Controllers
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<Samurai>))]
         public async Task<ActionResult<IEnumerable<Samurai>>> GetSamurais()
         {
-            return await _context.Samurais.ToListAsync();
+            return await _context.Samurais.Select(samurai => new Samurai
+            {
+                Id = samurai.Id,
+                Name = samurai.Name,
+                Clan = samurai.Clan,
+                Horse = samurai.Horse,
+                Quotes = samurai.Quotes,
+                SamuraiBattles = samurai.SamuraiBattles
+            }).ToListAsync();            
         }
 
         /// <summary>
@@ -47,7 +55,7 @@ namespace SampleWebAPI.Controllers
         {
             var samurai = await _context.Samurais.FindAsync(id);
 
-            if (samurai == null)  return NotFound();
+            if (samurai == null) return NotFound();
 
             return samurai;
         }
