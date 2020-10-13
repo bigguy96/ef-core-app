@@ -19,7 +19,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\EfCoreApp.Data\EfCoreApp.Data.csproj" />
-		<ProjectReference Include="..\EfCoreApp.Domain\EfCoreApp.Domain.csproj" />
+		<ProjectReference Include="..\EfCoreApp.Data\Samurai.Data.csproj" />
+		<ProjectReference Include="..\EfCoreApp.Domain\Samurai.Domain.csproj" />
 	</ItemGroup>
 </Project>

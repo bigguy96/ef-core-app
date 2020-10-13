@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EfCoreApp.Domain\EfCoreApp.Domain.csproj" />
+    <ProjectReference Include="..\EfCoreApp.Domain\Samurai.Domain.csproj" />
   </ItemGroup>
 
 </Project>

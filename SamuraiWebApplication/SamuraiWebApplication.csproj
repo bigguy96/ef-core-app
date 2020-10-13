@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EfCoreApp.Services\EfCoreApp.Services.csproj" />
+    <ProjectReference Include="..\EfCoreApp.Services\Samurai.Services.csproj" />
   </ItemGroup>
 
 </Project>
