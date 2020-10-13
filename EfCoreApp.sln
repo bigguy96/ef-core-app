@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samurai.Domain", "EfCoreApp.Domain\Samurai.Domain.csproj", "{E4395A90-F7EA-4904-8F23-5A0D3A1321E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samurai.Domain", "Samurai.Domain\Samurai.Domain.csproj", "{E4395A90-F7EA-4904-8F23-5A0D3A1321E9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samurai.Data", "EfCoreApp.Data\Samurai.Data.csproj", "{2F3AFD6D-4C62-4604-AFB8-72FA281117D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samurai.Data", "Samurai.Data\Samurai.Data.csproj", "{2F3AFD6D-4C62-4604-AFB8-72FA281117D9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SamuraiWebAPI", "SamuraiWebAPI\SamuraiWebAPI.csproj", "{522BFF06-EE92-4685-A941-277139DDC3F6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samurai.Services", "EfCoreApp.Services\Samurai.Services.csproj", "{769F92D5-043F-406B-B74E-B128FF6F897A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samurai.Services", "Samurai.Services\Samurai.Services.csproj", "{769F92D5-043F-406B-B74E-B128FF6F897A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SamuraiWebApplication", "SamuraiWebApplication\SamuraiWebApplication.csproj", "{D39F9409-9725-4B59-998B-3277B9F0F14B}"
 EndProject

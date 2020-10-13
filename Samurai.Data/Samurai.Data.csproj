@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EfCoreApp.Domain\Samurai.Domain.csproj" />
+    <ProjectReference Include="..\Samurai.Domain\Samurai.Domain.csproj" />
   </ItemGroup>
 
 </Project>

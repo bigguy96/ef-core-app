@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EfCoreApp.Services\Samurai.Services.csproj" />
+    <ProjectReference Include="..\Samurai.Domain\Samurai.Domain.csproj" />
+    <ProjectReference Include="..\Samurai.Services\Samurai.Services.csproj" />
   </ItemGroup>
 
 </Project>
