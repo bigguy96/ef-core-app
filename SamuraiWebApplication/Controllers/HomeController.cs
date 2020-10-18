@@ -18,7 +18,7 @@ namespace SamuraiWebApplication.Controllers
             _samuraiServices = samuraiServices;
         }
 
-        public async Task<IActionResult> IndexAsync()
+        public async Task<IActionResult> Index()
         {
             var guid = Guid.NewGuid().ToString().Substring(0, 6);
             var samurai = new Samurai
