@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
-using EfCoreApp.Domain;
-using EfCoreApp.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Samurai.Domain;
+using Samurai.Services.Interfaces;
 
 namespace SamuraiWebApplication.Controllers
 {
@@ -21,7 +21,7 @@ namespace SamuraiWebApplication.Controllers
         public async Task<IActionResult> Index()
         {
             var guid = Guid.NewGuid().ToString().Substring(0, 6);
-            var samurai = new Samurai
+            var samurai = new Samurai.Domain.Samurai
             {
                 Name = guid,
                 Clan = new Clan { ClanName = guid },

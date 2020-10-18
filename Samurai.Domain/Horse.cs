@@ -1,4 +1,4 @@
-﻿namespace EfCoreApp.Domain
+﻿namespace Samurai.Domain
 {
     public class Horse
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace EfCoreApp.Data.Migrations
+namespace Samurai.Data.Migrations
 {
     public partial class newrelationships : Migration
     {

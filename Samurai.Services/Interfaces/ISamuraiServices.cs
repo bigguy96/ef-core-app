@@ -1,13 +1,13 @@
-﻿using EfCoreApp.Domain;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Samurai.Domain;
 
-namespace EfCoreApp.Services.Interfaces
+namespace Samurai.Services.Interfaces
 {
     public interface ISamuraiServices
     {
-        Task<IEnumerable<Samurai>> GetAll();
-        Task<Samurai> GetOne(int id);
-        Task Add(Samurai samurai);
+        Task<IEnumerable<Domain.Samurai>> GetAll();
+        Task<Domain.Samurai> GetOne(int id);
+        Task Add(Domain.Samurai samurai);
     }
 }

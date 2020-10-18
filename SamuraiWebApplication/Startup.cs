@@ -1,21 +1,19 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http.Headers;
-using System.Threading.Tasks;
-using EfCoreApp.Services;
-using EfCoreApp.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Samurai.Services;
+using Samurai.Services.Interfaces;
 
 namespace SamuraiWebApplication
 {
     public class Startup
     {
+        private const string MyClient = "myclient";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -28,7 +26,7 @@ namespace SamuraiWebApplication
         {
             services.AddControllersWithViews();
             services.AddScoped<ISamuraiServices, SamuraiServices>();
-            services.AddHttpClient("myclient", client =>
+            services.AddHttpClient(MyClient, client =>
             {
                 client.BaseAddress = new Uri("https://localhost:44327/api/");
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));                

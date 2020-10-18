@@ -4,10 +4,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using EfCoreApp.Domain;
-using EfCoreApp.Data;
+using Samurai.Data;
 
-namespace SampleWebAPI.Controllers
+namespace SamuraiWebAPI.Controllers
 {
     [Produces("application/json")]
     [Route("api/[controller]")]
@@ -27,10 +26,10 @@ namespace SampleWebAPI.Controllers
         /// <returns>List os samurais</returns>
         /// <response code="200">Returns a list of samurais</response>        
         [HttpGet]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<Samurai>))]
-        public async Task<ActionResult<IEnumerable<Samurai>>> GetSamurais()
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<Samurai.Domain.Samurai>))]
+        public async Task<ActionResult<IEnumerable<Samurai.Domain.Samurai>>> GetSamurais()
         {
-            return await _context.Samurais.Select(samurai => new Samurai
+            return await _context.Samurais.Select(samurai => new Samurai.Domain.Samurai
             {
                 Id = samurai.Id,
                 Name = samurai.Name,
@@ -49,9 +48,9 @@ namespace SampleWebAPI.Controllers
         /// <response code="200">Returns a samurai</response>
         /// <response code="404">Samurai doesn't exist</response> 
         [HttpGet("{id}")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Samurai))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Samurai.Domain.Samurai))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<Samurai>> GetSamurai(int id)
+        public async Task<ActionResult<Samurai.Domain.Samurai>> GetSamurai(int id)
         {
             var samurai = await _context.Samurais.FindAsync(id);
 
@@ -73,7 +72,7 @@ namespace SampleWebAPI.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> PutSamurai(int id, Samurai samurai)
+        public async Task<IActionResult> PutSamurai(int id, Samurai.Domain.Samurai samurai)
         {
             if (id != samurai.Id)
             {
@@ -109,7 +108,7 @@ namespace SampleWebAPI.Controllers
         /// <response code="201">Newly created samurai</response>
         [ProducesResponseType(StatusCodes.Status201Created)]
         [HttpPost]
-        public async Task<ActionResult<Samurai>> PostSamurai(Samurai samurai)
+        public async Task<ActionResult<Samurai.Domain.Samurai>> PostSamurai(Samurai.Domain.Samurai samurai)
         {
             _context.Samurais.Add(samurai);
             await _context.SaveChangesAsync();
@@ -124,10 +123,10 @@ namespace SampleWebAPI.Controllers
         /// <returns>Samurai details, otherwise not found.</returns>
         /// <response code="200">Deleted samurai</response>
         /// <response code="404">Samurai not found</response>
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Samurai))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Samurai.Domain.Samurai))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Samurai>> DeleteSamurai(int id)
+        public async Task<ActionResult<Samurai.Domain.Samurai>> DeleteSamurai(int id)
         {
             var samurai = await _context.Samurais.FindAsync(id);
             if (samurai == null)

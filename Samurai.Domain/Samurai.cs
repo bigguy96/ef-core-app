@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace EfCoreApp.Domain
+namespace Samurai.Domain
 {
     public class Samurai
     {
