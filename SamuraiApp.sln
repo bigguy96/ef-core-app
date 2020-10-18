@@ -15,6 +15,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samurai.Services", "Samurai
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samurai.IDP", "Samurai.IDP\Samurai.IDP.csproj", "{4C218C9A-B268-4EBD-A3C2-839BE6FFCB19}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerApplication", "IdentityServerApplication\IdentityServerApplication.csproj", "{81923655-78FA-4A24-9F6D-275F3EEC13AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerWebApi", "IdentityServerWebApi\IdentityServerWebApi.csproj", "{C21B94C3-96CF-41EF-9154-551E812B7C26}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{4C218C9A-B268-4EBD-A3C2-839BE6FFCB19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C218C9A-B268-4EBD-A3C2-839BE6FFCB19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C218C9A-B268-4EBD-A3C2-839BE6FFCB19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81923655-78FA-4A24-9F6D-275F3EEC13AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81923655-78FA-4A24-9F6D-275F3EEC13AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81923655-78FA-4A24-9F6D-275F3EEC13AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81923655-78FA-4A24-9F6D-275F3EEC13AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C21B94C3-96CF-41EF-9154-551E812B7C26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C21B94C3-96CF-41EF-9154-551E812B7C26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C21B94C3-96CF-41EF-9154-551E812B7C26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C21B94C3-96CF-41EF-9154-551E812B7C26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
